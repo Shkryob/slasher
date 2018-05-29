@@ -1,0 +1,16 @@
+{
+  "name": "phaser3-skeleton",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:lgryn/phaser3-skeleton.git",
+  "author": "Lubomyr Grynyshyn <grynysh@gmail.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "babel-core": "^6.26.3",
+    "babel-loader": "^7.1.4",
+    "webpack": "^4.10.1"
+  },
+  "dependencies": {
+    "phaser": "^3.9.0"
+  }
+}

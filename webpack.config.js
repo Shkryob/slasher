@@ -9,7 +9,27 @@ module.exports = {
 
   output: {
     path: path.resolve(__dirname, 'build'),
-    filename: 'app.bundle.js'
+    filename: '[name].bundle.js'
+  },
+
+  optimization: {
+    splitChunks: {
+      chunks: 'all',
+      cacheGroups: {
+        vendor: {
+          test: /node_modules/,
+          name: "vendor",
+          chunks: "initial",
+          enforce: true,
+        },
+        client: {
+          test: /client/,
+          name: "app",
+          chunks: "initial",
+          enforce: true
+        }
+      }
+    }
   },
 
   module: {

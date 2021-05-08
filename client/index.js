@@ -3,9 +3,19 @@ import 'phaser';
 import { Main } from './scenes/main';
 
 const config = {
-  width: 680,
-  height: 400,
-  scene: Main
+  type: Phaser.AUTO,
+  width: 800,
+  height: 600,
+  scene: Main,
+  physics: {
+    default: 'arcade',
+    arcade: {
+      gravity: {
+        y: 300
+      },
+      debug: true
+    }
+  }
 };
 
 new Phaser.Game(config);

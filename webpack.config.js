@@ -52,16 +52,19 @@ module.exports = {
   },
 
   plugins: [
-    new CopyWebpackPlugin([
-      {
-        from: path.resolve(__dirname, 'client/index.html'),
-        to: path.resolve(__dirname, 'build')
-      },
-      {
-        from: path.resolve(__dirname, 'assets', '**', '*'),
-        to: path.resolve(__dirname, 'build')
-      }
-    ]),
+    new CopyWebpackPlugin({
+      patterns: [
+        {
+          from: path.resolve(__dirname, 'client/index.html'),
+          to: path.resolve(__dirname, 'build')
+        },
+        {
+          from: 'assets/**/*',
+          to: path.resolve(__dirname, 'build')
+        }
+      ],
+
+    }),
     new webpack.DefinePlugin({
       'typeof CANVAS_RENDERER': JSON.stringify(true),
       'typeof WEBGL_RENDERER': JSON.stringify(true)
